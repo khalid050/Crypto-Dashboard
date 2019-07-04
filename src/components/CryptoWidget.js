@@ -11,7 +11,8 @@ export default class CryptoWidget extends React.Component {
     console.log(this.props)
         return (
             <div className='widget'>
-                <p>{this.props.name}</p>                
+                <p>{this.props.name}</p>   
+               <p>${this.props.price}</p>           
             </div>
             
         )

@@ -13,7 +13,7 @@ export default class Search extends React.Component {
 
     selectCurrency(e) {
         e.preventDefault();
-        const currency = e.target.elements.currency.value.trim()
+        const currency = e.target.elements.currency.value.toUpperCase()
 
         if (!this.state.selectedCurrencies.includes(currency) && this.props.currencies.includes(currency)) {
             this.setState(prevState => ({

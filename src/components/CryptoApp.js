@@ -11,6 +11,7 @@ export default class CryptoApp extends React.Component {
         super(props);
         this.state = {
             currencies: Object.keys(cryptocurrencies),
+            fullNames: Object.values(cryptocurrencies),
             prices: {
             },
             selectedCurrencies: [],
@@ -19,6 +20,7 @@ export default class CryptoApp extends React.Component {
     }
 
     fetchData(input) {
+        
         
         fetch(`https://min-api.cryptocompare.com/data/price?fsym=${input}&tsyms=USD,JPY,EUR`).then((res) => {
             if (res.status === 200) {
@@ -29,7 +31,8 @@ export default class CryptoApp extends React.Component {
         }).then(data => {
             const current = input
             const newState = {...this.state.prices}
-            newState[current] = data.USD
+
+            newState[cryptocurrencies[current]] = data.USD
 
             this.setState(()=>({
                 prices: newState,
@@ -39,12 +42,6 @@ export default class CryptoApp extends React.Component {
         })
     }
 
-    fetchWidgets(input){
-        this.setState((prevState)=>{
-            widgets: [...prevState,input]
-        })
-    }
-    
   
     render() {
          console.log(this.state)

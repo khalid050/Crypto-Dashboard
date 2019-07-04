@@ -10,7 +10,7 @@ export default class WidgetDisplay extends React.Component {
             <div className='widget-display'>
                {
                    this.props.currencies.map(item=>(
-                       <CryptoWidget name={item}/>
+                       <CryptoWidget key={item} name={item} price={this.props.prices[item]}/>
                    ))
                }
 
