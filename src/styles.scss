@@ -1,7 +1,11 @@
 
-
+body{
+    background-color: grey;
+    color:white
+}
 h1{
-    text-align: center
+    text-align: center;
+    color:blue
 }
 
 #currency-filter{
@@ -17,5 +21,24 @@ h1{
     color:red;
     padding-left: 5px;
     margin:5px
+
+}
+
+.widget-display{
+    height: 300px;
+    width: 500px;
+    display:flex;
+    margin:15px
+}
+.widget{
+    margin-top:100px;
+    height:150px;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 2px;
+    color:white;
+    text-align: center;
+    margin:10px
 
 }

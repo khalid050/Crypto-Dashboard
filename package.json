@@ -12,8 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cryptocurrencies": "^7.0.0",
     "express": "^4.17.1",
     "file-loader": "^4.0.0",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.6.2",
     "nodemon": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
