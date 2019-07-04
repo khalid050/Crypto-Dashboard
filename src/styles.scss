@@ -1,7 +1,7 @@
 
 body{
-    background-color: grey;
-    color:white
+    background-color: white;
+    color:black
 }
 h1{
     text-align: center;
@@ -9,36 +9,39 @@ h1{
 }
 
 #currency-filter{
-    border: 1px solid black;
-    border-radius: 5px;
+    //border: 1px solid black;
+    //border-radius: 5px;
     width: 300px;
     margin-left: 500px;
     margin-top: 150px;
     padding:5px;
+    border: none;
+    font-size: 30px
+
 }
 
 #search-button{
     color:red;
     padding-left: 5px;
-    margin:5px
+    margin:5px;
 
 }
 
 .widget-display{
     padding-top: 100px;
     height: 300px;
-    width: 500px;
-    display: inline-block;
+    width: 1000px;
+    display: inline-flex;
     margin:15px
 }
 .widget{
     margin-top:100px;
     height:150px;
     width: 150px;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 10px;
     box-shadow: 2px 2px;
-    color:white;
+    color:black;
     text-align: center;
     margin:10px;
 
