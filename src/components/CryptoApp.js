@@ -21,7 +21,6 @@ export default class CryptoApp extends React.Component {
 
     fetchData(input) {
 
-
         fetch(`https://min-api.cryptocompare.com/data/price?fsym=${input}&tsyms=USD,JPY,EUR`).then((res) => {
             if (res.status === 200) {
                 return res.json()
@@ -29,10 +28,8 @@ export default class CryptoApp extends React.Component {
                 throw new Error('Unable to fetch currency')
             }
         }).then(data => {
-            const current = input
             const newState = { ...this.state.prices }
-
-            newState[cryptocurrencies[current]] = data.USD
+            newState[cryptocurrencies[input]] = data.USD 
 
             this.setState(() => ({
                 prices: newState,
@@ -44,7 +41,6 @@ export default class CryptoApp extends React.Component {
 
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <Header />
