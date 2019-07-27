@@ -8,7 +8,7 @@ export default class Search extends React.Component {
         this.state = {
             selectedCurrencies: [],
         }
-         this.selectCurrency = this.selectCurrency.bind(this)
+        this.selectCurrency = this.selectCurrency.bind(this)
     }
 
     selectCurrency(e) {
@@ -24,15 +24,29 @@ export default class Search extends React.Component {
         }
     }
 
+ 
+
     render() {
         return (
-            <form onSubmit={this.selectCurrency}>
-            
-                <label>
-                    <input id='currency-filter' type="text" name="name" placeholder='Search' name='currency' />
-                    <button id='search-button' type="submit">Submit</button>
-                </label>
-            </form>
+            <div>
+                <form onSubmit={this.selectCurrency}>
+
+                    <label>
+                        <input id='currency-filter' type="text" name="name" placeholder='Search' name='currency' />
+                        <button id='search-button' type="submit">Submit</button>
+                    </label>
+                </form>
+
+                <form id='delete-all' onSubmit={this.props.deleteCurrencies}>
+
+                    <label>
+                        <button type="submit">delete</button>
+                    </label>
+                </form>
+
+             
+            </div>
+
         )
     }
 }
