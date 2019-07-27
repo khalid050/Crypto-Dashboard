@@ -38,24 +38,24 @@ export default class App extends React.Component {
             this.setState(() => ({
                 prices: newState,
                 selectedCurrencies: Object.keys(newState)
-
             }))
         })
     }
     deleteCurrencies() {
-        this.setState({ selectedCurrencies: [] })
+        this.setState({ selectedCurrencies: [], prices: {} })
     }
 
     deleteOneCurrency(currency){
         let newState = [...this.state.selectedCurrencies].filter(item=> item !== currency)
         let prices = {...this.state.prices}
-        delete prices.currency
+        delete prices[currency]
         this.setState(()=>({
            selectedCurrencies: newState,
            prices : prices
         }))
     }
     render() {
+        console.log(this.state.prices)
         console.log(this.state.selectedCurrencies)
 
         return (
