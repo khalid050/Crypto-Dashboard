@@ -15,9 +15,7 @@ router.post('/users', (req, res) => {
       })
   })
   
-  
   // fetch all users stored in the database
-  
   router.get('/users', (req, res) => {
   
     User.find({})

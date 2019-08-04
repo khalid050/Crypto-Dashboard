@@ -1,9 +1,11 @@
-const mongoose = require('mongoose')
+const mongoose =  require('mongoose')
+const myURI = "mongodb+srv://khalid:gX3DJpxGEyfTxtjB@cluster0-svk4l.mongodb.net/test?retryWrites=true&w=majority";
 
-const connectionURL = 'mongodb://127.0.0.1:27017/Crypto-App-api'
+const URI = process.env.MONGO_URI || myURI;
 
-
-const connection = mongoose.connect(connectionURL, {useNewUrlParser: true, useCreateIndex: true})
-
-
-module.exports = connection
+mongoose.connect(URI, { useNewUrlParser: true }, (err,client)=>{
+    if(err){
+        return console.log('Cannot connect',err)
+    }
+    return console.log('Connected to database')
+})

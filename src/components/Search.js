@@ -1,8 +1,7 @@
 import React from 'react'
-// import CryptoWidget from './CryptoWidget'
 
 
-export default class Search extends React.Component {
+class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,9 +22,6 @@ export default class Search extends React.Component {
             this.props.fetchData(currency)
         }
     }
-
- 
-
     render() {
         return (
             <div>
@@ -50,3 +46,6 @@ export default class Search extends React.Component {
         )
     }
 }
+
+
+export default Search
