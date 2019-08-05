@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 
 class Search extends React.Component {
@@ -9,6 +10,8 @@ class Search extends React.Component {
         }
         this.selectCurrency = this.selectCurrency.bind(this)
     }
+
+    
 
     selectCurrency(e) {
         e.preventDefault();
@@ -47,5 +50,10 @@ class Search extends React.Component {
     }
 }
 
+const mapStateToProps = (state) =>{
+    return {
+        currencies: state.currencies.currencies,
+    } 
+}
 
-export default Search
+export default connect(mapStateToProps)(Search)

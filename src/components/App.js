@@ -60,7 +60,7 @@ class App extends React.Component {
             <div>
                 <BrowserRouter>
                         <Route exact path='/' component={Header} />
-                        <Route exact path='/' component={()=> <Search currencies={this.state.currencies} fetchData={this.fetchData} deleteCurrencies={this.deleteCurrencies}/>}  />
+                        <Route exact path='/' component={()=> <Search  fetchData={this.fetchData} deleteCurrencies={this.deleteCurrencies}/>}  />
                         <Route exact path ='/' component={()=> <WidgetDisplay prices={this.state.prices} currencies={this.state.selectedCurrencies} deleteOneCurrency={this.deleteOneCurrency} /> }  /> 
                         <Route path='/signup' component={SignUpSignIn} />
                 </BrowserRouter>
