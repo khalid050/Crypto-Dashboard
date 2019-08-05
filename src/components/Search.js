@@ -1,8 +1,8 @@
 import React from 'react'
-// import CryptoWidget from './CryptoWidget'
+import {connect} from 'react-redux'
 
 
-export default class Search extends React.Component {
+class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,6 +10,8 @@ export default class Search extends React.Component {
         }
         this.selectCurrency = this.selectCurrency.bind(this)
     }
+
+    
 
     selectCurrency(e) {
         e.preventDefault();
@@ -23,9 +25,6 @@ export default class Search extends React.Component {
             this.props.fetchData(currency)
         }
     }
-
- 
-
     render() {
         return (
             <div>
@@ -50,3 +49,11 @@ export default class Search extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) =>{
+    return {
+        currencies: state.currencies.currencies,
+    } 
+}
+
+export default connect(mapStateToProps)(Search)

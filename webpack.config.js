@@ -1,16 +1,16 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html", 
+  template: "./src/index.html",
   filename: "./index.html"
 });
 
 module.exports = {
   entry: "./src/index.js",
-  output: { 
-    path: path.join(__dirname, 'dist'),
+  output: {
+    path: path.join(__dirname, 'bundle'),
     filename: "[name].js"
-  }, 
+  },
   plugins: [htmlPlugin],
   module: {
     rules: [
@@ -26,7 +26,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
-  }, devServer:{
-    historyApiFallback: true
+  }, devServer: {
+    historyApiFallback: true,
   }
 };
